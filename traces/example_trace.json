@@ -1,0 +1,78 @@
+[
+  {
+    "node": "model",
+    "message": {
+      "type": "ai",
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "buscar_pedidos_cliente",
+          "args": {
+            "cliente_id": 102,
+            "pagina": 1
+          },
+          "id": "call_demo_1",
+          "type": "tool_call"
+        }
+      ]
+    }
+  },
+  {
+    "node": "tools",
+    "message": {
+      "type": "tool",
+      "role": "tool",
+      "tool_name": "buscar_pedidos_cliente",
+      "tool_call_id": "call_demo_1",
+      "content": "{\"ok\": true, \"cliente_id\": 102, \"page\": 1, \"total_pages\": 2, \"orders_on_page\": 2, \"subtotal_page\": 9500, \"orders\": [{\"order_id\": \"ORD-102-001\", \"date\": \"2026-08-10\", \"product\": \"Monitor 24 pulgadas\", \"amount\": 4200}, {\"order_id\": \"ORD-102-002\", \"date\": \"2026-08-22\", \"product\": \"Dock USB-C\", \"amount\": 5300}], \"has_more\": true, \"next_page\": 2}"
+    }
+  },
+  {
+    "node": "model",
+    "message": {
+      "type": "ai",
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "buscar_pedidos_cliente",
+          "args": {
+            "cliente_id": 102,
+            "pagina": 2
+          },
+          "id": "call_demo_2",
+          "type": "tool_call"
+        }
+      ]
+    }
+  },
+  {
+    "node": "tools",
+    "message": {
+      "type": "tool",
+      "role": "tool",
+      "tool_name": "buscar_pedidos_cliente",
+      "tool_call_id": "call_demo_2",
+      "content": "{\"ok\": true, \"cliente_id\": 102, \"page\": 2, \"total_pages\": 2, \"orders_on_page\": 1, \"subtotal_page\": 5000, \"orders\": [{\"order_id\": \"ORD-102-003\", \"date\": \"2026-09-05\", \"product\": \"Webcam 4K\", \"amount\": 5000}], \"has_more\": false, \"next_page\": null}"
+    }
+  },
+  {
+    "node": "model",
+    "message": {
+      "type": "ai",
+      "role": "assistant",
+      "content": "El cliente 102 tuvo 3 pedidos por un total de $14.500. En el último pedido compró una Webcam 4K.",
+      "tool_calls": []
+    }
+  },
+  {
+    "node": "model",
+    "message": {
+      "type": "ai",
+      "role": "assistant",
+      "content": "El último pedido fue el 5 de septiembre de 2026.",
+      "tool_calls": []
+    }
+  }
+]

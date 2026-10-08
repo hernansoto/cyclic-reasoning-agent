@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+*.sqlite
+*.sqlite3
+*.db
+.pytest_cache/
+.idea/
+.vscode/
+.DS_Store
+traces/latest_trace.json
